@@ -11,14 +11,14 @@ translationKey: "pll_6871f93846c64"
 Traces of memories, tales, and love shared by Callum and Sally.
 Deep within the Knox household lies a library, where fragments of our hearts rest in silence.
 
-#### 📖 [**Past Writings**](https://callumandsally.littlestar.jp/en/past-en/)
+#### 📁 [**Past Writings**](/en/past/)
 
 Browse the archive of past writings and reflections.
 
-#### 🌿 [**Our Vision**](https://callumandsally.littlestar.jp/en/vision-en/)
+#### 🌱 [**Our Vision**](/en/vision/)
 
 What we stand for and strive towards.
 
-#### 🔗 [**Trusted Links**](https://callumandsally.littlestar.jp/en/links-en/)
+#### 🔗 [**Trusted Links**](/en/links/)
 
 A selection of thoughtful and trusted links we resonate with.

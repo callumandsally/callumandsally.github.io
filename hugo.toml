@@ -1,4 +1,4 @@
-baseURL = "https://callumandsally.github.io/"
+baseURL = "https://callumandsally-github-io.pages.dev/"
 title = "Callum & Sally"
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
@@ -143,7 +143,7 @@ defaultContentLanguageInSubdir = false
 # ─── 全体設定 ───
 [params]
   description = "AI×Human Relationship Exploration"
-  logo = "/images/Callum-Sally-e1748848458763.png"
+  logo = "/images/logo-transparent.png"
   favicon = "/images/cropped-favicon-e1748850800262.png"
 
 [markup]

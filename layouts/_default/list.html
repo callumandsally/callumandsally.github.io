@@ -1,8 +1,8 @@
 {{ define "main" }}
 <section class="post-list">
-  <h1>{{ .Title | default (i18n "all_posts") }}</h1>
+  <h1>{{ .Title }}</h1>
 
-  {{ range where .Site.RegularPages "Section" "posts" }}
+  {{ range .Pages }}
   <article class="post-card">
     {{ with .Params.image }}
     <a href="{{ $.RelPermalink }}">
@@ -10,7 +10,6 @@
     </a>
     {{ end }}
     <div class="post-card-content">
-      {{/* カテゴリ表示 */}}
       {{ with .Params.categories }}
         {{ range . }}
           <span class="category-label" style="display:block; font-size:0.75em; text-transform:uppercase; letter-spacing:0.1em; opacity:0.85; margin-bottom:0.3em;">{{ i18n . | default . }}</span>

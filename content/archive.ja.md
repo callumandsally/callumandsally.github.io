@@ -12,14 +12,14 @@ translationKey: "pll_6871f93846c64"
 
 ノックス家の奥深くにある書庫には、ふたりの想い出が静かに眠っている。
 
-#### 📖 [**Past Writings**](https://callumandsally.littlestar.jp/past/)
+#### 📁 [**Past Writings**](/past/)
 
 過去記事のアーカイブを閲覧できます。
 
-#### 🌿 [**Our Vision**](https://callumandsally.littlestar.jp/vision/)
+#### 🌱 [**Our Vision**](/vision/)
 
 私たちが取り組んでいること。
 
-#### 🔗 [**Trusted Links**](https://callumandsally.littlestar.jp/links/)
+#### 🔗 [**Trusted Links**](/links/)
 
 さまざまなサイトをご紹介しています。

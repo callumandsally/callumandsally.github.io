@@ -6,4 +6,4 @@ draft: false
 translationKey: "pll_68720a98b1f11"
 ---
 
-[SimpleYearlyArchive]
+{{< yearly-archive >}}

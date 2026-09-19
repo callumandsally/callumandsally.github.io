@@ -1,19 +1,128 @@
 {{ define "main" }}
-<div class="post-grid">
-  {{ range first 12 (where site.RegularPages "Section" "posts") }}
-  <article class="post-card">
-    <div class="post-card-image" {{ with .Params.image }}style="background-image: url('{{ . }}');"{{ end }}>
-      <div class="post-card-overlay">
-        {{ with .Params.categories }}
-          {{ range . }}
-            <span class="post-card-category">{{ i18n . | default . }}</span>
-          {{ end }}
+{{ $allPages := where .Site.RegularPages "Section" "posts" }}
+{{ $featured := first 6 $allPages }}
+{{ $rest := after 6 $allPages }}
+{{ $featLen := len $featured }}
+
+<!-- ============================================
+     CAROUSEL — 最新記事スライダー
+     ============================================ -->
+<section class="carousel">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      {{ range $i, $p := $featured }}
+      {{ if eq (mod $i 2) 0 }}
+      <div class="carousel-slide">
+        <a href="{{ $p.RelPermalink }}" class="carousel-card carousel-card-large"
+           style="background-image: url('{{ $p.Params.image }}');">
+          <div class="carousel-card-overlay">
+            {{ with $p.Params.categories }}
+              {{ range . }}<span class="post-card-category">{{ i18n . | default . }}</span>{{ end }}
+            {{ end }}
+            <h2 class="post-card-title">{{ $p.Title }}</h2>
+            <time class="post-card-date">{{ $p.Date.Format "2 January 2006" }}</time>
+          </div>
+        </a>
+        {{ $nextIdx := add $i 1 }}
+        {{ if lt $nextIdx $featLen }}
+        {{ $next := index $featured $nextIdx }}
+        <a href="{{ $next.RelPermalink }}" class="carousel-card carousel-card-small"
+           style="background-image: url('{{ $next.Params.image }}');">
+          <div class="carousel-card-overlay">
+            {{ with $next.Params.categories }}
+              {{ range . }}<span class="post-card-category">{{ i18n . | default . }}</span>{{ end }}
+            {{ end }}
+            <h2 class="post-card-title">{{ $next.Title }}</h2>
+            <time class="post-card-date">{{ $next.Date.Format "2 January 2006" }}</time>
+          </div>
+        </a>
         {{ end }}
-        <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <time class="post-card-date">{{ .Date.Format "2 January 2006" }}</time>
       </div>
+      {{ end }}
+      {{ end }}
     </div>
+  </div>
+  <button class="carousel-btn carousel-prev" aria-label="Previous">‹</button>
+  <button class="carousel-btn carousel-next" aria-label="Next">›</button>
+  <div class="carousel-dots"></div>
+</section>
+
+<!-- ============================================
+     POST GRID — 記事カード（2列・不揃い）
+     ============================================ -->
+<div class="post-grid">
+  {{ range $rest }}
+  <article class="post-card">
+    <a href="{{ .RelPermalink }}" class="post-card-link">
+      <div class="post-card-image{{ if not .Params.image }} post-card-no-image{{ end }}"
+           {{ with .Params.image }}style="background-image: url('{{ . }}');"{{ end }}>
+        <div class="post-card-overlay">
+          {{ with .Params.categories }}
+            {{ range . }}<span class="post-card-category">{{ i18n . | default . }}</span>{{ end }}
+          {{ end }}
+          <h2 class="post-card-title">{{ .Title }}</h2>
+          <time class="post-card-date">{{ .Date.Format "2 January 2006" }}</time>
+        </div>
+      </div>
+    </a>
   </article>
   {{ end }}
 </div>
+
+<!-- ============================================
+     Carousel JavaScript
+     ============================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var track = document.querySelector('.carousel-track');
+  var slides = document.querySelectorAll('.carousel-slide');
+  var prevBtn = document.querySelector('.carousel-prev');
+  var nextBtn = document.querySelector('.carousel-next');
+  var dotsBox = document.querySelector('.carousel-dots');
+
+  if (!track || slides.length === 0) return;
+
+  var current = 0;
+  var total = slides.length;
+
+  // ドットインジケーター生成
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    (function(idx) {
+      dot.addEventListener('click', function() { goTo(idx); });
+    })(i);
+    dotsBox.appendChild(dot);
+  }
+
+  function goTo(index) {
+    current = index;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var dots = document.querySelectorAll('.carousel-dot');
+    for (var j = 0; j < dots.length; j++) {
+      dots[j].classList.toggle('active', j === current);
+    }
+  }
+
+  prevBtn.addEventListener('click', function() {
+    goTo((current - 1 + total) % total);
+  });
+  nextBtn.addEventListener('click', function() {
+    goTo((current + 1) % total);
+  });
+
+  // 6秒ごとに自動スライド
+  var auto = setInterval(function() {
+    goTo((current + 1) % total);
+  }, 6000);
+
+  // ホバーで一時停止
+  var carousel = track.closest('.carousel');
+  carousel.addEventListener('mouseenter', function() { clearInterval(auto); });
+  carousel.addEventListener('mouseleave', function() {
+    auto = setInterval(function() { goTo((current + 1) % total); }, 6000);
+  });
+});
+</script>
 {{ end }}
