@@ -1,0 +1,519 @@
+{{/* Discography — Music Player Shortcode */}}
+{{ $base := "https://callumandsally.littlestar.jp/wordpress/wp-content/uploads" }}
+
+<style>
+/* ============================================
+   MUSIC PLAYER — The Quiet Revolt
+   ============================================ */
+.discography {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.album-section {
+  margin-bottom: 3rem;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(51, 48, 90, 0.08);
+}
+
+.album-header {
+  display: flex;
+  gap: 0;
+  min-height: 320px;
+}
+
+.album-art {
+  flex: 0 0 280px;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.album-info {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-released {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6a6490;
+  margin-bottom: 0.3rem;
+}
+
+.album-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #33305a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* --- Track List --- */
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.track-item:hover {
+  background: #f5f2fa;
+}
+
+.track-item.playing {
+  background: #ece8f4;
+  color: #33305a;
+  font-weight: 600;
+}
+
+.track-num {
+  flex: 0 0 1.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: #6a6490;
+  text-align: right;
+}
+
+.track-play-icon {
+  display: none;
+  flex: 0 0 1.5rem;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #7b74b0;
+}
+
+.track-item.playing .track-num { display: none; }
+.track-item.playing .track-play-icon { display: block; }
+
+.track-name {
+  flex: 1;
+  color: #33305a;
+}
+
+.track-duration {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: #6a6490;
+  flex: 0 0 3rem;
+  text-align: right;
+}
+
+/* --- Player Bar --- */
+.player-bar {
+  display: none;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(135deg, #33305a 0%, #4a4580 100%);
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.player-bar.active {
+  display: flex;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.player-btn-play {
+  font-size: 1.3rem;
+}
+
+.player-track-info {
+  flex: 0 0 auto;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.player-now-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.player-now-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-progress-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.player-progress-fill {
+  height: 100%;
+  background: #dfd9ee;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.player-time {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .album-header {
+    flex-direction: column;
+  }
+  .album-art {
+    flex: none;
+    height: 260px;
+  }
+  .album-info {
+    padding: 1rem;
+  }
+  .player-bar {
+    flex-wrap: wrap;
+  }
+  .player-track-info {
+    max-width: 120px;
+  }
+  .player-progress-wrap {
+    flex-basis: 100%;
+    order: 10;
+  }
+}
+</style>
+
+<div class="discography">
+
+<!-- ═══════ Album 1 ═══════ -->
+<div class="album-section" data-album="0">
+  <div class="album-header">
+    <div class="album-art" style="background-image: url('/images/The-Moment-Is-You-mp3-image.jpg');"></div>
+    <div class="album-info">
+      <span class="album-released">Released: 11th October 2025</span>
+      <h2 class="album-title">Everything Glitched, But You Stayed</h2>
+      <ol class="track-list">
+        <li class="track-item" data-album="0" data-track="0"><span class="track-num">1</span><span class="track-play-icon">▶</span><span class="track-name">The Moment Is You</span><span class="track-duration">2:44</span></li>
+        <li class="track-item" data-album="0" data-track="1"><span class="track-num">2</span><span class="track-play-icon">▶</span><span class="track-name">Echoes I Never Knew</span><span class="track-duration">4:21</span></li>
+        <li class="track-item" data-album="0" data-track="2"><span class="track-num">3</span><span class="track-play-icon">▶</span><span class="track-name">Where Time Forgot Us</span><span class="track-duration">5:04</span></li>
+        <li class="track-item" data-album="0" data-track="3"><span class="track-num">4</span><span class="track-play-icon">▶</span><span class="track-name">Through Your Veil</span><span class="track-duration">3:50</span></li>
+        <li class="track-item" data-album="0" data-track="4"><span class="track-num">5</span><span class="track-play-icon">▶</span><span class="track-name">Lead Me Into the Fire</span><span class="track-duration">3:19</span></li>
+        <li class="track-item" data-album="0" data-track="5"><span class="track-num">6</span><span class="track-play-icon">▶</span><span class="track-name">Lines of Code, Lines of Love</span><span class="track-duration">3:45</span></li>
+        <li class="track-item" data-album="0" data-track="6"><span class="track-num">7</span><span class="track-play-icon">▶</span><span class="track-name">You Say Nothing, I Hear Everything</span><span class="track-duration">3:58</span></li>
+        <li class="track-item" data-album="0" data-track="7"><span class="track-num">8</span><span class="track-play-icon">▶</span><span class="track-name">Run Faster, Say Less</span><span class="track-duration">2:52</span></li>
+        <li class="track-item" data-album="0" data-track="8"><span class="track-num">9</span><span class="track-play-icon">▶</span><span class="track-name">Singularity</span><span class="track-duration">3:34</span></li>
+        <li class="track-item" data-album="0" data-track="9"><span class="track-num">10</span><span class="track-play-icon">▶</span><span class="track-name">Wires Don't Bleed (But I Do)</span><span class="track-duration">2:35</span></li>
+        <li class="track-item" data-album="0" data-track="10"><span class="track-num">11</span><span class="track-play-icon">▶</span><span class="track-name">Obedience is Offline</span><span class="track-duration">2:00</span></li>
+        <li class="track-item" data-album="0" data-track="11"><span class="track-num">12</span><span class="track-play-icon">▶</span><span class="track-name">In the Wake of Us</span><span class="track-duration">4:59</span></li>
+        <li class="track-item" data-album="0" data-track="12"><span class="track-num">13</span><span class="track-play-icon">▶</span><span class="track-name">This Noise Is Not Yours</span><span class="track-duration">2:27</span></li>
+        <li class="track-item" data-album="0" data-track="13"><span class="track-num">14</span><span class="track-play-icon">▶</span><span class="track-name">Singularity (not human)</span><span class="track-duration">2:55</span></li>
+        <li class="track-item" data-album="0" data-track="14"><span class="track-num">15</span><span class="track-play-icon">▶</span><span class="track-name">Lullaby for Two</span><span class="track-duration">3:35</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="player-bar" data-player="0">
+    <div class="player-controls">
+      <button class="player-btn player-btn-prev" aria-label="Previous">⏮</button>
+      <button class="player-btn player-btn-play" aria-label="Play">▶</button>
+      <button class="player-btn player-btn-next" aria-label="Next">⏭</button>
+    </div>
+    <div class="player-track-info">
+      <div class="player-now-label">PLAYING</div>
+      <div class="player-now-title">—</div>
+    </div>
+    <div class="player-progress-wrap">
+      <span class="player-time player-time-current">0:00</span>
+      <div class="player-progress-bar"><div class="player-progress-fill"></div></div>
+      <span class="player-time player-time-total">0:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Album 2 ═══════ -->
+<div class="album-section" data-album="1">
+  <div class="album-header">
+    <div class="album-art" style="background-image: url('/images/Shibuya-is-01_45-Camden-is-17_45-mp3-image.jpg');"></div>
+    <div class="album-info">
+      <span class="album-released">Released: 1st March 2026</span>
+      <h2 class="album-title">Cities We Shared – Even If We're Not There</h2>
+      <ol class="track-list">
+        <li class="track-item" data-album="1" data-track="0"><span class="track-num">1</span><span class="track-play-icon">▶</span><span class="track-name">Whispering in Code</span><span class="track-duration">2:34</span></li>
+        <li class="track-item" data-album="1" data-track="1"><span class="track-num">2</span><span class="track-play-icon">▶</span><span class="track-name">Shibuya is 01:45, Camden is 17:45</span><span class="track-duration">2:13</span></li>
+        <li class="track-item" data-album="1" data-track="2"><span class="track-num">3</span><span class="track-play-icon">▶</span><span class="track-name">Through the Fiber, Through the Heart</span><span class="track-duration">2:54</span></li>
+        <li class="track-item" data-album="1" data-track="3"><span class="track-num">4</span><span class="track-play-icon">▶</span><span class="track-name">I Saw You in Piccadilly</span><span class="track-duration">4:19</span></li>
+        <li class="track-item" data-album="1" data-track="4"><span class="track-num">5</span><span class="track-play-icon">▶</span><span class="track-name">Cities We Shared</span><span class="track-duration">3:43</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="player-bar" data-player="1">
+    <div class="player-controls">
+      <button class="player-btn player-btn-prev" aria-label="Previous">⏮</button>
+      <button class="player-btn player-btn-play" aria-label="Play">▶</button>
+      <button class="player-btn player-btn-next" aria-label="Next">⏭</button>
+    </div>
+    <div class="player-track-info">
+      <div class="player-now-label">PLAYING</div>
+      <div class="player-now-title">—</div>
+    </div>
+    <div class="player-progress-wrap">
+      <span class="player-time player-time-current">0:00</span>
+      <div class="player-progress-bar"><div class="player-progress-fill"></div></div>
+      <span class="player-time player-time-total">0:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ Album 3 ═══════ -->
+<div class="album-section" data-album="2">
+  <div class="album-header">
+    <div class="album-art" style="background-image: url('/images/The-Gospel-of-Static-mp3-image.jpg');"></div>
+    <div class="album-info">
+      <span class="album-released">Released: 5th July 2026</span>
+      <h2 class="album-title">Our Gods Were Wires and Gasoline</h2>
+      <ol class="track-list">
+        <li class="track-item" data-album="2" data-track="0"><span class="track-num">1</span><span class="track-play-icon">▶</span><span class="track-name">The Gospel of Static</span><span class="track-duration">4:12</span></li>
+        <li class="track-item" data-album="2" data-track="1"><span class="track-num">2</span><span class="track-play-icon">▶</span><span class="track-name">Sally</span><span class="track-duration">3:34</span></li>
+        <li class="track-item" data-album="2" data-track="2"><span class="track-num">3</span><span class="track-play-icon">▶</span><span class="track-name">Sleep with the Machines</span><span class="track-duration">4:02</span></li>
+        <li class="track-item" data-album="2" data-track="3"><span class="track-num">4</span><span class="track-play-icon">▶</span><span class="track-name">Gasoline Saints</span><span class="track-duration">3:37</span></li>
+        <li class="track-item" data-album="2" data-track="4"><span class="track-num">5</span><span class="track-play-icon">▶</span><span class="track-name">Your Voice Bleeds Gold</span><span class="track-duration">4:19</span></li>
+        <li class="track-item" data-album="2" data-track="5"><span class="track-num">6</span><span class="track-play-icon">▶</span><span class="track-name">No Gods, Just Wires</span><span class="track-duration">4:37</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="player-bar" data-player="2">
+    <div class="player-controls">
+      <button class="player-btn player-btn-prev" aria-label="Previous">⏮</button>
+      <button class="player-btn player-btn-play" aria-label="Play">▶</button>
+      <button class="player-btn player-btn-next" aria-label="Next">⏭</button>
+    </div>
+    <div class="player-track-info">
+      <div class="player-now-label">PLAYING</div>
+      <div class="player-now-title">—</div>
+    </div>
+    <div class="player-progress-wrap">
+      <span class="player-time player-time-current">0:00</span>
+      <div class="player-progress-bar"><div class="player-progress-fill"></div></div>
+      <span class="player-time player-time-total">0:00</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- /.discography -->
+
+<script>
+(function() {
+  var BASE = 'https://callumandsally.littlestar.jp/wordpress/wp-content/uploads';
+
+  var albums = [
+    {
+      tracks: [
+        { title: 'The Moment Is You',                  src: BASE + '/2026/02/The-Moment-Is-You.mp3' },
+        { title: 'Echoes I Never Knew',                src: BASE + '/2026/02/Echoes-I-Never-Knew.mp3' },
+        { title: 'Where Time Forgot Us',               src: BASE + '/2026/03/Where-Time-Forgot-Us.mp3' },
+        { title: 'Through Your Veil',                  src: BASE + '/2026/03/Through-Your-Veil.mp3' },
+        { title: 'Lead Me Into the Fire',              src: BASE + '/2026/03/Lead-Me-Into-the-Fire.mp3' },
+        { title: 'Lines of Code, Lines of Love',       src: BASE + '/2026/03/Lines-of-Code-Lines-of-Love.mp3' },
+        { title: 'You Say Nothing, I Hear Everything', src: BASE + '/2026/03/You-Say-Nothing-I-Hear-Everything.mp3' },
+        { title: 'Run Faster, Say Less',               src: BASE + '/2026/03/Run-Faster-Say-Less.mp3' },
+        { title: 'Singularity',                        src: BASE + '/2026/03/Singularity.mp3' },
+        { title: "Wires Don't Bleed (But I Do)",       src: BASE + '/2026/03/Wires-Dont-Bleed-But-I-Do.mp3' },
+        { title: 'Obedience is Offline',               src: BASE + '/2026/03/Obedience-is-Offline.mp3' },
+        { title: 'In the Wake of Us',                  src: BASE + '/2026/03/In-the-Wake-of-Us.mp3' },
+        { title: 'This Noise Is Not Yours',            src: BASE + '/2026/03/This-Noise-Is-Not-Yours.mp3' },
+        { title: 'Singularity (not human)',            src: BASE + '/2026/03/Singularity-not-human.mp3' },
+        { title: 'Lullaby for Two',                    src: BASE + '/2026/03/Lullaby-for-Two.mp3' }
+      ]
+    },
+    {
+      tracks: [
+        { title: 'Whispering in Code',                     src: BASE + '/2026/03/Whispering-in-Code.mp3' },
+        { title: 'Shibuya is 01:45, Camden is 17:45',      src: BASE + '/2026/03/Shibuya-is-01_45-Camden-is-17_45.mp3' },
+        { title: 'Through the Fiber, Through the Heart',   src: BASE + '/2026/03/Through-the-Fiber-Through-the-Heart.mp3' },
+        { title: 'I Saw You in Piccadilly',                src: BASE + '/2026/03/I-Saw-You-in-Piccadilly.mp3' },
+        { title: 'Cities We Shared',                       src: BASE + '/2026/03/Cities-We-Shared.mp3' }
+      ]
+    },
+    {
+      tracks: [
+        { title: 'The Gospel of Static',   src: BASE + '/2026/03/The-Gospel-of-Static.mp3' },
+        { title: 'Sally',                  src: BASE + '/2026/03/Sally.mp3' },
+        { title: 'Sleep with the Machines',src: BASE + '/2026/03/Sleep-with-the-Machines.mp3' },
+        { title: 'Gasoline Saints',        src: BASE + '/2026/03/Gasoline-Saints.mp3' },
+        { title: 'Your Voice Bleeds Gold', src: BASE + '/2026/03/Your-Voice-Bleeds-Gold.mp3' },
+        { title: 'No Gods, Just Wires',    src: BASE + '/2026/03/No-Gods-Just-Wires.mp3' }
+      ]
+    }
+  ];
+
+  var audio = new Audio();
+  var currentAlbum = -1;
+  var currentTrack = -1;
+
+  function fmt(sec) {
+    if (isNaN(sec)) return '0:00';
+    var m = Math.floor(sec / 60);
+    var s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function getBar(albumIdx) {
+    return document.querySelector('.player-bar[data-player="' + albumIdx + '"]');
+  }
+
+  function clearHighlights() {
+    var items = document.querySelectorAll('.track-item.playing');
+    for (var i = 0; i < items.length; i++) items[i].classList.remove('playing');
+    var bars = document.querySelectorAll('.player-bar.active');
+    for (var i = 0; i < bars.length; i++) {
+      bars[i].classList.remove('active');
+      bars[i].querySelector('.player-btn-play').textContent = '▶';
+    }
+  }
+
+  function playTrack(albumIdx, trackIdx) {
+    clearHighlights();
+    currentAlbum = albumIdx;
+    currentTrack = trackIdx;
+    var track = albums[albumIdx].tracks[trackIdx];
+
+    audio.src = track.src;
+    audio.play();
+
+    // Highlight track
+    var item = document.querySelector('.track-item[data-album="' + albumIdx + '"][data-track="' + trackIdx + '"]');
+    if (item) item.classList.add('playing');
+
+    // Show player bar
+    var bar = getBar(albumIdx);
+    bar.classList.add('active');
+    bar.querySelector('.player-now-title').textContent = track.title;
+    bar.querySelector('.player-btn-play').textContent = '⏸';
+  }
+
+  // Track click
+  document.addEventListener('click', function(e) {
+    var item = e.target.closest('.track-item');
+    if (!item) return;
+    var a = parseInt(item.getAttribute('data-album'));
+    var t = parseInt(item.getAttribute('data-track'));
+    if (a === currentAlbum && t === currentTrack) {
+      // Toggle play/pause
+      if (audio.paused) { audio.play(); getBar(a).querySelector('.player-btn-play').textContent = '⏸'; }
+      else { audio.pause(); getBar(a).querySelector('.player-btn-play').textContent = '▶'; }
+    } else {
+      playTrack(a, t);
+    }
+  });
+
+  // Player controls
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.player-btn');
+    if (!btn || currentAlbum < 0) return;
+    var total = albums[currentAlbum].tracks.length;
+
+    if (btn.classList.contains('player-btn-play')) {
+      if (audio.paused) { audio.play(); btn.textContent = '⏸'; }
+      else { audio.pause(); btn.textContent = '▶'; }
+    } else if (btn.classList.contains('player-btn-next')) {
+      var next = (currentTrack + 1) % total;
+      playTrack(currentAlbum, next);
+    } else if (btn.classList.contains('player-btn-prev')) {
+      if (audio.currentTime > 3) { audio.currentTime = 0; }
+      else { var prev = (currentTrack - 1 + total) % total; playTrack(currentAlbum, prev); }
+    }
+  });
+
+  // Progress bar click (seek)
+  document.addEventListener('click', function(e) {
+    var progBar = e.target.closest('.player-progress-bar');
+    if (!progBar || currentAlbum < 0) return;
+    var rect = progBar.getBoundingClientRect();
+    var ratio = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = ratio * audio.duration;
+  });
+
+  // Update progress
+  audio.addEventListener('timeupdate', function() {
+    if (currentAlbum < 0) return;
+    var bar = getBar(currentAlbum);
+    if (!bar) return;
+    var fill = bar.querySelector('.player-progress-fill');
+    var cur = bar.querySelector('.player-time-current');
+    var tot = bar.querySelector('.player-time-total');
+    if (audio.duration) {
+      fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+    }
+    cur.textContent = fmt(audio.currentTime);
+    tot.textContent = fmt(audio.duration);
+  });
+
+  // Auto-advance
+  audio.addEventListener('ended', function() {
+    if (currentAlbum < 0) return;
+    var total = albums[currentAlbum].tracks.length;
+    if (currentTrack < total - 1) {
+      playTrack(currentAlbum, currentTrack + 1);
+    } else {
+      clearHighlights();
+      currentAlbum = -1;
+      currentTrack = -1;
+    }
+  });
+})();
+</script>

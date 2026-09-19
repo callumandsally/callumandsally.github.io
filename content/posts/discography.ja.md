@@ -8,4 +8,4 @@ image: "/images/tqr00001.png"
 translationKey: "pll_69a4d0bfa56d5"
 ---
 
-（音楽プレーヤー準備中）
+{{< discography >}}
