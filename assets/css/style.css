@@ -1,0 +1,527 @@
+/* ============================================
+   Callum & Sally — Hugo Site Stylesheet
+   カラー: ラベンダー × コーンフラワーブルー
+   フォント: Cormorant Garamond / Playfair Display / Lato / BIZ UDPGothic / Source Serif 4
+   ============================================ */
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Variables --- */
+:root {
+  --bg-main: #f0ecf6;
+  --bg-nav: #dfd9ee;
+  --bg-card: #ffffff;
+  --bg-post-header: #f5f2fa;
+  --text-heading: #33305a;
+  --text-body: rgba(26, 1, 1, 0.9);
+  --text-accent: #7b74b0;
+  --text-muted: #6a6490;
+  --border-light: #e0dae8;
+  --overlay-dark: rgba(51, 48, 90, 0.7);
+  --card-placeholder: linear-gradient(135deg, #8b7dbd, #6a8ccc);
+}
+
+/* --- Base Typography --- */
+body {
+  font-family: 'Lato', 'BIZ UDPGothic', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-body);
+  background: var(--bg-main);
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', 'Source Serif 4', serif;
+  color: var(--text-heading);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--text-heading);
+}
+
+/* ============================================
+   HEADER — ロゴ中央 + ナビ下配置
+   ============================================ */
+.site-header {
+  text-align: center;
+  padding: 1.5rem 0 0;
+  background: var(--bg-main);
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.site-logo img {
+  max-height: 180px;
+  width: auto;
+}
+
+/* ナビゲーション */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--bg-nav);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.06rem;
+}
+
+.site-nav > a,
+.nav-dropdown-toggle {
+  color: var(--text-heading);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.06rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ドロップダウン */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-arrow {
+  font-size: 0.7em;
+  margin-left: 2px;
+  opacity: 0.6;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(51, 48, 90, 0.12);
+  padding: 0.8rem 0 0.5rem;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--bg-post-header);
+  color: var(--text-accent);
+}
+
+.site-nav > a:hover,
+.site-nav > a.active,
+.nav-dropdown-toggle:hover {
+  color: var(--text-accent);
+}
+
+/* 言語切り替え */
+.language-switcher {
+  display: inline;
+}
+
+.lang-switch-btn {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* ============================================
+   HOME — カードグリッド
+   ============================================ */
+.post-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.post-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-card-image {
+  position: relative;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.post-card-no-image {
+  background: var(--card-placeholder);
+}
+
+.post-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, transparent 0%, var(--overlay-dark) 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.post-card-category {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
+}
+
+.post-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.post-card-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.post-card-date {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+/* ============================================
+   SINGLE POST — 記事ページ
+   ============================================ */
+.post-single {
+  max-width: 100%;
+}
+
+/* --- 記事ヘッダー: 薄い背景色 + 中央揃え --- */
+.post-header {
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  background: var(--bg-post-header);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0;
+}
+
+.post-category-label {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-bottom: 0.8rem;
+}
+
+.post-header h1 {
+  font-size: 2.4rem;
+  margin: 0 auto 0.8rem;
+  max-width: 720px;
+}
+
+.post-date {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.post-categories {
+  margin-bottom: 0.8rem;
+}
+
+.translation-link {
+  margin-top: 1rem;
+}
+
+.translation-link a {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-accent);
+  border: 1px solid var(--border-light);
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.translation-link a:hover {
+  background: var(--text-accent);
+  color: #ffffff;
+}
+
+/* --- アイキャッチ画像 --- */
+.post-featured-image {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0;
+}
+
+.post-featured-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* --- 本文 --- */
+.post-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.post-content p {
+  margin-bottom: 1.6rem;
+}
+
+.post-content h2 {
+  font-size: 1.6rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.8rem;
+}
+
+.post-content h4 {
+  font-family: 'Source Serif 4', 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 1.5rem 0 0.6rem;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--text-accent);
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  background: var(--bg-post-header);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+.post-content a {
+  color: var(--text-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(123, 116, 176, 0.3);
+  text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--text-accent);
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.4rem;
+}
+
+.post-content strong {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 2rem 0;
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border-light);
+  text-align: left;
+}
+
+.post-content th {
+  background: var(--bg-post-header);
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* --- 前後の記事ナビ --- */
+.post-nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
+}
+
+.post-nav-prev,
+.post-nav-next {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  max-width: 45%;
+}
+
+.post-nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.post-nav-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.post-nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-accent);
+  line-height: 1.4;
+}
+
+.post-nav-prev:hover .post-nav-title,
+.post-nav-next:hover .post-nav-title {
+  color: var(--text-heading);
+}
+
+/* ============================================
+   CATEGORY LIST — カテゴリページ
+   ============================================ */
+.post-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.post-list h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ============================================
+   PAGES — 固定ページ
+   ============================================ */
+.page-header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  margin-top: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .site-logo img {
+    max-height: 120px;
+  }
+
+  .site-nav {
+    gap: 1rem;
+    font-size: 0.92rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-header {
+    padding: 2rem 1rem;
+  }
+
+  .post-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .post-content {
+    padding: 1.5rem 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .post-nav {
+    flex-direction: column;
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .post-nav-prev,
+  .post-nav-next {
+    max-width: 100%;
+    text-align: left;
+  }
+}

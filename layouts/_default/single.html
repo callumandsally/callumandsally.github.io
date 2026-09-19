@@ -1,0 +1,60 @@
+{{ define "main" }}
+<article class="post-single">
+  {{/* ヘッダー — カテゴリ・タイトル・日付・翻訳リンクを中央揃え、薄い背景色 */}}
+  <header class="post-header">
+    {{/* カテゴリ表示 */}}
+    {{ with .Params.categories }}
+    <div class="post-categories">
+      {{ range . }}
+        <span class="post-category-label">{{ i18n . | default . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <h1>{{ .Title }}</h1>
+
+    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+      {{ .Date.Format "2 January 2006" }}
+    </time>
+
+    {{/* この記事の翻訳版へのリンク */}}
+    {{ if .IsTranslated }}
+    <div class="translation-link">
+      {{ range .Translations }}
+        <a href="{{ .RelPermalink }}">
+          {{ if eq .Language.Lang "en" }}EN{{ else }}JP{{ end }} — {{ i18n "read_in" }}
+        </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{/* アイキャッチ画像 */}}
+  {{ with .Params.image }}
+  <figure class="post-featured-image">
+    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+  </figure>
+  {{ end }}
+
+  {{/* 本文 */}}
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{/* 前後の記事リンク */}}
+  <nav class="post-nav">
+    {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="post-nav-prev">
+        <span class="post-nav-label">← Previous</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="post-nav-next">
+        <span class="post-nav-label">Next →</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </nav>
+</article>
+{{ end }}

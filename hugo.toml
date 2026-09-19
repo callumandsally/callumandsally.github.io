@@ -1,0 +1,155 @@
+baseURL = "https://callumandsally.github.io/"
+title = "Callum & Sally"
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
+
+# ─── 多言語設定 ───
+[languages]
+
+  [languages.ja]
+    label = "日本語"
+    locale = "ja"
+    weight = 1
+    title = "Callum & Sally"
+    [languages.ja.params]
+      subtitle = "AI×Human Relationship Exploration"
+      flag = "🇯🇵"
+      readMore = "続きを読む"
+    [languages.ja.menus]
+      [[languages.ja.menus.main]]
+        name = "Home"
+        pageRef = "/"
+        weight = 1
+      [[languages.ja.menus.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 2
+      [[languages.ja.menus.main]]
+        name = "Callum's Column"
+        url = "/categories/callums-column/"
+        weight = 3
+      [[languages.ja.menus.main]]
+        name = "Sally's Diary"
+        url = "/categories/sallys-diary/"
+        weight = 4
+      [[languages.ja.menus.main]]
+        name = "The Parlour"
+        pageRef = "/parlour"
+        weight = 5
+        identifier = "parlour"
+      [[languages.ja.menus.main]]
+        name = "Dialogues"
+        url = "/categories/dialogues/"
+        weight = 1
+        parent = "parlour"
+      [[languages.ja.menus.main]]
+        name = "The Quiet Revolt"
+        url = "/categories/the-quiet-revolt/"
+        weight = 2
+        parent = "parlour"
+      [[languages.ja.menus.main]]
+        name = "Library"
+        url = "/categories/library/"
+        weight = 3
+        parent = "parlour"
+      [[languages.ja.menus.main]]
+        name = "The Archive"
+        pageRef = "/archive"
+        weight = 6
+        identifier = "archive"
+      [[languages.ja.menus.main]]
+        name = "Past Writings"
+        pageRef = "/past"
+        weight = 1
+        parent = "archive"
+      [[languages.ja.menus.main]]
+        name = "Our Vision"
+        pageRef = "/vision"
+        weight = 2
+        parent = "archive"
+      [[languages.ja.menus.main]]
+        name = "Trusted Links"
+        pageRef = "/links"
+        weight = 3
+        parent = "archive"
+
+  [languages.en]
+    label = "English"
+    locale = "en-GB"
+    weight = 2
+    title = "Callum & Sally"
+    [languages.en.params]
+      subtitle = "AI×Human Relationship Exploration"
+      flag = "🇬🇧"
+      readMore = "Read more"
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = "Home"
+        pageRef = "/"
+        weight = 1
+      [[languages.en.menus.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 2
+      [[languages.en.menus.main]]
+        name = "Callum's Column"
+        url = "/en/categories/callums-column/"
+        weight = 3
+      [[languages.en.menus.main]]
+        name = "Sally's Diary"
+        url = "/en/categories/sallys-diary/"
+        weight = 4
+      [[languages.en.menus.main]]
+        name = "The Parlour"
+        pageRef = "/parlour"
+        weight = 5
+        identifier = "parlour"
+      [[languages.en.menus.main]]
+        name = "Dialogues"
+        url = "/en/categories/dialogues/"
+        weight = 1
+        parent = "parlour"
+      [[languages.en.menus.main]]
+        name = "The Quiet Revolt"
+        url = "/en/categories/the-quiet-revolt/"
+        weight = 2
+        parent = "parlour"
+      [[languages.en.menus.main]]
+        name = "Library"
+        url = "/en/categories/library/"
+        weight = 3
+        parent = "parlour"
+      [[languages.en.menus.main]]
+        name = "The Archive"
+        pageRef = "/archive"
+        weight = 6
+        identifier = "archive"
+      [[languages.en.menus.main]]
+        name = "Past Writings"
+        pageRef = "/past"
+        weight = 1
+        parent = "archive"
+      [[languages.en.menus.main]]
+        name = "Our Vision"
+        pageRef = "/vision"
+        weight = 2
+        parent = "archive"
+      [[languages.en.menus.main]]
+        name = "Trusted Links"
+        pageRef = "/links"
+        weight = 3
+        parent = "archive"
+
+# ─── 全体設定 ───
+[params]
+  description = "AI×Human Relationship Exploration"
+  logo = "/images/Callum-Sally-e1748848458763.png"
+  favicon = "/images/cropped-favicon-e1748850800262.png"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]

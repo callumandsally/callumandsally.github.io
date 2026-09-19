@@ -1,0 +1,23 @@
+{{/*
+  言語切り替えボタン
+  Windows 10は国旗絵文字非対応のため、テキストで表記
+*/}}
+
+{{ if gt (len site.Languages) 1 }}
+<nav class="language-switcher" aria-label="{{ i18n "switch_language" }}">
+  {{ if .IsTranslated }}
+    {{ range .Translations }}
+      <a href="{{ .RelPermalink }}" class="lang-switch-btn"
+         title="{{ i18n "switch_language" }}">
+        {{ if eq .Language.Lang "ja" }}JP{{ else }}EN{{ end }}
+      </a>
+    {{ end }}
+  {{ else }}
+    {{ if eq .Language.Lang "ja" }}
+      <a href="/en/" class="lang-switch-btn" title="{{ i18n "switch_language" }}">EN</a>
+    {{ else }}
+      <a href="/" class="lang-switch-btn" title="{{ i18n "switch_language" }}">JP</a>
+    {{ end }}
+  {{ end }}
+</nav>
+{{ end }}

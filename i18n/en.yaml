@@ -1,0 +1,29 @@
+# ─── Navigation / UI ───
+home: "Home"
+menu: "Menu"
+search: "Search"
+
+# ─── Post listing ───
+read_more: "Read more"
+posted_on: "Posted on"
+categories: "Categories"
+all_posts: "All posts"
+
+# ─── Category names ───
+sallys-diary: "Sally's Diary"
+callums-column: "Callum's Column"
+library: "Library"
+dialogues: "Dialogues"
+the-quiet-revolt: "The Quiet Revolt"
+
+# ─── Language switch ───
+switch_language: "Switch language"
+read_in: "Read this article in Japanese"
+
+# ─── Footer ───
+copyright: "© Callum & Sally"
+powered_by: "Powered by Hugo"
+
+# ─── 404 ───
+page_not_found: "Page not found"
+back_to_home: "Back to home"

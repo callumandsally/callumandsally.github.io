@@ -1,0 +1,47 @@
+{{/*
+  サイトヘッダー — ロゴ中央 + ドロップダウン対応ナビ
+*/}}
+
+<header class="site-header">
+  {{/* ロゴ — 中央配置 */}}
+  <div class="header-logo">
+    <a href="{{ site.Home.RelPermalink }}" class="site-logo" aria-label="{{ i18n "home" }}">
+      {{ with site.Params.logo }}
+        <img src="{{ . }}" alt="{{ site.Title }}" />
+      {{ else }}
+        <span class="site-title">{{ site.Title }}</span>
+      {{ end }}
+    </a>
+  </div>
+
+  {{/* ナビゲーション */}}
+  <nav class="site-nav" aria-label="{{ i18n "menu" }}">
+    {{ $currentPage := . }}
+    {{ range site.Menus.main }}
+      {{ if .HasChildren }}
+        {{/* ドロップダウン付きメニュー */}}
+        <div class="nav-dropdown">
+          <a href="{{ .URL }}"
+             class="nav-dropdown-toggle"
+             {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>
+            {{ .Name }} <span class="nav-arrow">▾</span>
+          </a>
+          <div class="nav-dropdown-menu">
+            {{ range .Children }}
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </div>
+      {{ else }}
+        {{/* 通常のメニュー項目 */}}
+        <a href="{{ .URL }}"
+           {{ if $currentPage.IsMenuCurrent "main" . }}class="active"{{ end }}>
+          {{ .Name }}
+        </a>
+      {{ end }}
+    {{ end }}
+
+    {{/* 言語切り替え */}}
+    {{ partial "language-switcher.html" . }}
+  </nav>
+</header>

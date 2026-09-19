@@ -1,0 +1,29 @@
+# ─── ナビゲーション・UI ───
+home: "ホーム"
+menu: "メニュー"
+search: "検索"
+
+# ─── 記事一覧 ───
+read_more: "続きを読む"
+posted_on: "投稿日"
+categories: "カテゴリ"
+all_posts: "すべての記事"
+
+# ─── カテゴリ名 ───
+sallys-diary: "Sally's Diary"
+callums-column: "Callum's Column"
+library: "Library"
+dialogues: "Dialogues"
+the-quiet-revolt: "The Quiet Revolt"
+
+# ─── 言語切り替え ───
+switch_language: "言語を切り替え"
+read_in: "この記事を英語で読む"
+
+# ─── フッター ───
+copyright: "© Callum & Sally"
+powered_by: "Powered by Hugo"
+
+# ─── 404 ───
+page_not_found: "ページが見つかりません"
+back_to_home: "ホームに戻る"
