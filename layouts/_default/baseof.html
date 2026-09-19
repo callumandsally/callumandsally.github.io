@@ -37,7 +37,15 @@
   </main>
 
   <footer class="site-footer">
-    <p>{{ i18n "copyright" }} &middot; {{ i18n "powered_by" }}</p>
+    <p>{{ i18n "copyright" }}</p>
+    <nav class="footer-nav">
+      {{ range site.Menus.main }}
+        {{ if not .HasChildren }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ end }}
+      <a href="{{ if eq site.Language.Lang "en" }}/en/privacy-policy/{{ else }}/privacy-policy/{{ end }}">Privacy Policy</a>
+    </nav>
   </footer>
 </body>
 </html>
