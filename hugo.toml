@@ -153,3 +153,6 @@ defaultContentLanguageInSubdir = false
 
 [outputs]
   home = ["HTML", "RSS"]
+
+[permalinks]
+  posts = "/posts/:slug/"
