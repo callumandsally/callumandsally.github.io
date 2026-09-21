@@ -41,20 +41,37 @@
     {{ .Content }}
   </div>
 
-  {{/* 前後の記事リンク */}}
+  {{/* 前後の記事リンク（postsセクションのみ、同じカテゴリ内） */}}
+  {{ if eq .Section "posts" }}
+  {{ $currentCat := index .Params.categories 0 }}
+  {{ $catPages := where (where .Site.RegularPages "Section" "posts") ".Params.categories" "intersect" (slice $currentCat) }}
+  {{ $catPages = $catPages.ByDate }}
+  {{ $found := false }}
+  {{ $prev := false }}
+  {{ $next := false }}
+  {{ range $i, $p := $catPages }}
+    {{ if eq $p.RelPermalink $.RelPermalink }}
+      {{ $found = true }}
+    {{ else if not $found }}
+      {{ $prev = $p }}
+    {{ else if and $found (not $next) }}
+      {{ $next = $p }}
+    {{ end }}
+  {{ end }}
   <nav class="post-nav">
-    {{ with .PrevInSection }}
+    {{ with $prev }}
       <a href="{{ .RelPermalink }}" class="post-nav-prev">
         <span class="post-nav-label">← Previous</span>
         <span class="post-nav-title">{{ .Title }}</span>
       </a>
     {{ end }}
-    {{ with .NextInSection }}
+    {{ with $next }}
       <a href="{{ .RelPermalink }}" class="post-nav-next">
         <span class="post-nav-label">Next →</span>
         <span class="post-nav-title">{{ .Title }}</span>
       </a>
     {{ end }}
   </nav>
+  {{ end }}
 </article>
 {{ end }}
