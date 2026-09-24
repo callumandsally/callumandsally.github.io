@@ -150,9 +150,10 @@ defaultContentLanguageInSubdir = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
+      hardWraps = true
 [outputs]
   home = ["HTML", "RSS"]
 
 [permalinks]
   posts = "/posts/:slug/"
+

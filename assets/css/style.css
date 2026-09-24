@@ -756,3 +756,31 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+.speech strong {
+  color: inherit;
+}
+.speech {
+  margin-bottom: 1.5em;
+}
+
+.speech a {
+  color: #7b74b0;
+}
+
+a.footnote-ref {
+  color: #7b74b0;
+  text-decoration: none;
+}
+
+.footnotes li {
+  padding-left: 0.5em;
+}
+
+.footnotes li p {
+  margin: 0.3em 0;
+}
+
+.footnotes {
+  font-size: 0.9em;
+}
