@@ -768,6 +768,10 @@ a:hover {
   color: #7b74b0;
 }
 
+.speech.own blockquote {
+  color: inherit;
+}
+
 a.footnote-ref {
   color: #7b74b0;
   text-decoration: none;
@@ -783,4 +787,11 @@ a.footnote-ref {
 
 .footnotes {
   font-size: 0.9em;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
 }
