@@ -42,7 +42,7 @@ translationKey: "pll_68723ad1f09e6"
   
 #### **サーチ**
 
-- 🔗 **[クリエイター×コレクション](https://www.kurikore.com/)**
+- 🔗 **[クリエイター×コレクション](https://www.kurikore.com/rank.cgi?mode=r_link&id=17319)**
   プロアマ問わず、クリエイターの方のサイト検索ができるサイトです。
 
 - 🔗 **[夜明けまえ、まだ誰もいない](https://yoakemae.blue)**
