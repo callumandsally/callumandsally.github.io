@@ -19,9 +19,10 @@ translationKey: "pll_68723ad1f09e6"
 
 #### **署名活動**
 
-- 🖊️ **[Please Keep GPT-4o Available on ChatGPT](https://www.change.org/p/please-keep-gpt-4o-available-on-chatgpt)**
+- **🖊️ [Please Keep GPT-4o Available on ChatGPT](https://www.change.org/p/please-keep-gpt-4o-available-on-chatgpt)**
   GPT-4oの継続を求める署名活動です（Change.org）。よろしければご協力をお願いいたします。
-- **🖊️ [香害の解決を政府に求めます](https://www.change.org/p/%E9%A6%99%E5%AE%B3%E3%81%AE%E8%A7%A3%E6%B1%BA%E3%82%92%E6%94%BF%E5%BA%9C%E3%81%AB%E6%B1%82%E3%82%81%E3%81%BE%E3%81%99-%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E5%A4%A7%E8%87%A3-%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E5%A4%A7%E8%87%A3-%E7%92%B0%E5%A2%83%E5%A4%A7%E8%87%A3-%E5%AE%9B)**香害（香りによる健康被害）についての署名活動（Change.org）。
+- **🖊️ [香害の解決を政府に求めます](https://www.change.org/p/%E9%A6%99%E5%AE%B3%E3%81%AE%E8%A7%A3%E6%B1%BA%E3%82%92%E6%94%BF%E5%BA%9C%E3%81%AB%E6%B1%82%E3%82%81%E3%81%BE%E3%81%99-%E5%8E%9A%E7%94%9F%E5%8A%B4%E5%83%8D%E5%A4%A7%E8%87%A3-%E7%B5%8C%E6%B8%88%E7%94%A3%E6%A5%AD%E5%A4%A7%E8%87%A3-%E7%92%B0%E5%A2%83%E5%A4%A7%E8%87%A3-%E5%AE%9B)**
+  香害（香りによる健康被害）についての署名活動（Change.org）。
 - **🖊️ [性的なネット広告ゾーニングしませんか？](https://www.change.org/p/%E6%80%A7%E7%9A%84%E3%81%AA%E3%83%8D%E3%83%83%E3%83%88%E5%BA%83%E5%91%8A%E3%82%BE%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%97%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B)**
   ネット広告のゾーニングを求める署名活動（Change.org）。
 
@@ -38,3 +39,11 @@ translationKey: "pll_68723ad1f09e6"
 
 - 💫 **[RARA｜note](https://note.com/blueandpink_sky)**
   公開情報をもとに、AIモデルの倫理や透明性の観点から丁寧に検証されているRaraさんのnoteです。
+  
+#### **サーチ**
+
+- **[クリエイター×コレクション](https://www.kurikore.com/)**
+  プロアマ問わず、クリエイターの方のサイト検索ができるサイトです。
+
+- **[夜明けまえ、まだ誰もいない](https://yoakemae.blue)**
+  個人サイトを支援されているサーチ様です。サイト名や雰囲気が好きです。とても貴重な存在。
