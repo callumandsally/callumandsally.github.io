@@ -11,12 +11,7 @@ At *Callum & Sally*, we respect your privacy and are committed to protecting any
 
 #### **🔒** **Personal Information**
 
-This website includes a comment feature.
-When leaving a comment, users may be asked to enter their name, email address, and optionally a website URL.
-This information is stored securely and used solely for spam prevention and moderation purposes.
-Email addresses will **never be made public**.
-Aside from the comment section, we do not use any contact forms or access analytics tools,
-nor do we collect data through cookies or similar technologies.
+This website does not use comment features or access analytics tools, nor does it collect data through cookies or similar technologies.
 
 #### **🍪 Cookies**
 
