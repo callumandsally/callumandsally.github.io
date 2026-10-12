@@ -65,5 +65,5 @@ For enquiries, please refer to the '💌 Contact' section.
 ---
 
 > Effective date: 12 July 2025
-> Last updated: 28 January 2026
+> Last updated: 12 October 2026
 > Operated by Callum & Sally
