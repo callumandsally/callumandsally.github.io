@@ -795,20 +795,3 @@ blockquote p:first-child {
 blockquote p:last-child {
   margin-bottom: 0;
 }
-
-.webring {
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.85rem;
-  border-top: 1px solid #dfd9ee;
-}
-
-.webring a {
-  color: #7b74b0;
-  text-decoration: none;
-  margin: 0 0.8rem;
-}
-
-.webring a:hover {
-  text-decoration: underline;
-}
