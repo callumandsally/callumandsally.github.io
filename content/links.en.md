@@ -39,3 +39,9 @@ We believe that even the smallest actions can lead to meaningful change.
 
 - 🔗 **[Hotline Webring](https://hotlinewebring.club/)**
   A webring that feels like the '90s internet — and somehow feels brand new because of it.
+  
+- 🔗 **[ooh.directory](https://ooh.directory/)**
+  Neatly categorised and so easy to browse!
+  
+- 🔗 **[Blogroll](https://blogroll.org/)**
+  Seeing so many personal sites in one place almost moved me to tears.
