@@ -448,9 +448,12 @@ a:hover {
 }
 
 .post-featured-image img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 60vh;
   height: auto;
-  border-radius: 6px;
+  margin: 0 auto;
 }
 
 /* --- 本文 --- */
