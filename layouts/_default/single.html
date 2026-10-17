@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="post-single">
+<article class="post-single" data-pagefind-body>
   {{/* ヘッダー — カテゴリ・タイトル・日付・翻訳リンクを中央揃え、薄い背景色 */}}
   <header class="post-header">
     {{/* カテゴリ表示 */}}
@@ -13,9 +13,11 @@
 
     <h1>{{ .Title }}</h1>
 
+    {{ if and (eq .Section "posts") (not .Date.IsZero) }}
     <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
       {{ .Date.Format "2 January 2006" }}
     </time>
+    {{ end }}
 
     {{/* この記事の翻訳版へのリンク */}}
     {{ if .IsTranslated }}

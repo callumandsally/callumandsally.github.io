@@ -43,5 +43,78 @@
 
     {{/* 言語切り替え */}}
     {{ partial "language-switcher.html" . }}
+	
+    {{/* 検索 */}}
+    <button type="button" class="search-toggle" aria-label="{{ i18n "search" }}" aria-expanded="false" aria-controls="search-panel">
+      <img src="{{ "images/search.svg" | relURL }}" alt="" width="20" height="20">
+    </button>
+
+    {{/* RSS */}}
+    <a href="{{ "index.xml" | relLangURL }}" class="rss-link" aria-label="RSS">
+      <img src="{{ "images/rss.svg" | relURL }}" alt="RSS" width="20" height="20">
+    </a>
+  </nav>
+
+  {{/* ふわっと開く検索パネル */}}
+  <div id="search-panel" class="search-panel">
+    <div class="search-panel-inner">
+      <div id="nav-search"></div>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.search-toggle');
+    const panel = document.getElementById('search-panel');
+    let loaded = false;
+
+    function loadPagefind() {
+      return new Promise((resolve) => {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = '/pagefind/pagefind-ui.css';
+        document.head.appendChild(css);
+        const js = document.createElement('script');
+        js.src = '/pagefind/pagefind-ui.js';
+        js.onload = resolve;
+        document.head.appendChild(js);
+      });
+    }
+
+    async function openPanel() {
+      if (!loaded) {
+        await loadPagefind();
+		const msgs = {{ index site.Data.search_messages site.Language.Lang }};
+        new PagefindUI({
+  element: '#nav-search',
+  showSubResults: true,
+  translations: {
+  placeholder: {{ i18n "search_placeholder" | default "Search" }},
+  zero_results: msgs[Math.floor(Math.random() * msgs.length)]
+}
+});
+        loaded = true;
+      }
+      panel.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      setTimeout(() => panel.querySelector('input')?.focus(), 100);
+    }
+
+    function closePanel() {
+      panel.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('click', () => {
+      panel.classList.contains('is-open') ? closePanel() : openPanel();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePanel();
+    });
+  });
+  </script>
+</header>
+
   </nav>
 </header>

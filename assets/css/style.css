@@ -795,3 +795,59 @@ blockquote p:first-child {
 blockquote p:last-child {
   margin-bottom: 0;
 }
+
+.rss-link img,
+.search-toggle img {
+  vertical-align: middle;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.rss-link:hover img,
+.search-toggle:hover img {
+  opacity: 1;
+}
+
+.rss-link img {
+  position: relative;
+  top: -2px;
+}
+
+/* ボタンの見た目をリセット */
+.search-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 検索パネル — 閉じているときは高さゼロ */
+.search-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  /* Pagefindの色をサイトに合わせる */
+  --pagefind-ui-primary: #7b74b0;
+  --pagefind-ui-text: #33305a;
+  --pagefind-ui-border: #dfd9ee;
+  --pagefind-ui-font: "Lato", "BIZ UDPGothic", sans-serif;
+}
+.search-panel.is-open {
+  max-height: 70vh;
+  opacity: 1;
+  overflow-y: auto;
+}
+.search-panel-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  text-align: left;
+}
+
+.search-panel input:focus {
+  outline: 2px solid #7b74b0;
+}
+
+#nav-search .pagefind-ui__search-input {
+  font-weight: 400;
+}

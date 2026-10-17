@@ -2,6 +2,7 @@
 home: "ホーム"
 menu: "メニュー"
 search: "検索"
+search_placeholder: "探してみよう！"
 
 # ─── 記事一覧 ───
 read_more: "続きを読む"

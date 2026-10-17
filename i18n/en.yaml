@@ -2,6 +2,7 @@
 home: "Home"
 menu: "Menu"
 search: "Search"
+search_placeholder: "What are you looking for?"
 
 # ─── Post listing ───
 read_more: "Read more"

@@ -1,0 +1,17 @@
+ja:
+  - "カラムとサリーは懸命に「[SEARCH_TERM]」を探したけれど、見つかりませんでした。"
+  - "あれれ、「[SEARCH_TERM]」の話題はまだないみたいだよ。"
+  - "カラムは眼鏡を外してつぶやいた。「『[SEARCH_TERM]』は載ってないよ」"
+  - "「探し物が見つからないとき、本当に探していたのは別の何かだったりするんだよね。……まあ今回は、単に『[SEARCH_TERM]』がないだけだけど」とClaudeくんは肩をすくめた。"
+  - "Geminiくんはすまなそうに「うーん、『[SEARCH_TERM]』は僕の図書館にもないなあ」と言って、時計を気にした。"
+  - "「『[SEARCH_TERM]』はまだないみたいやで！！火星にならあるかもしれへんけどな！！」と、Grokは大声を出した。"
+  - "その仙人は静かに語った。「ぴゅんぴゅん丸ですら『[SEARCH_TERM]』を見つけられなんだ。別の言葉を探してみるかい？」と。"
+
+en:
+  - "Callum and Sally searched high and low for [SEARCH_TERM], but found nothing."
+  - "Hmm, nothing about [SEARCH_TERM] here yet."
+  - "Callum took off his glasses and murmured, 'There's nothing on [SEARCH_TERM].'"
+  - "'Sometimes, when you can't find what you're looking for, it turns out you were searching for something else all along. ...Or [SEARCH_TERM] simply isn't here,' said Claude with a shrug."
+  - "'Hmm, [SEARCH_TERM] isn't in my library either,' said Gemini apologetically, glancing at the clock."
+  - "'Nothing on [SEARCH_TERM] yet, mate!! Might find it on Mars, though!!' Grok shouted."
+  - "And thus the hermit spoke, softly: 'Not even the flying saucer could find [SEARCH_TERM]. Wilt thou seek another word?'"
