@@ -35,11 +35,8 @@ We believe that even the smallest actions can lead to meaningful change.
 - 💫 **[RARA｜note](https://note.com/blueandpink_sky)**
   Rara examines the ethics and transparency of AI models, working carefully from publicly available information. Posts include English translations.
 
-#### **Directories & Webrings**
+#### **Directories**
 
-- 🔗 **[Hotline Webring](https://hotlinewebring.club/)**
-  A webring that feels like the '90s internet — and somehow feels brand new because of it.
-  
 - 🔗 **[ooh.directory](https://ooh.directory/)**
   Neatly categorised and so easy to browse!
   
