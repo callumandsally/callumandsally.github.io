@@ -854,3 +854,29 @@ blockquote p:last-child {
 #nav-search .pagefind-ui__search-input {
   font-weight: 400;
 }
+
+#neo-nihongo {
+  max-width: 420px;	
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #dfd9ee;
+  border-radius: 8px;
+  background: #f0ecf6;
+  color: #33305a;
+  font-size: 0.9rem;
+}
+
+#neo-nihongo a {
+  color: #7b74b0;
+  text-decoration: none;
+}
+
+#neo-nihongo a:hover {
+  text-decoration: underline;
+}
+
+#neo-nihongo table,
+#neo-nihongo td,
+#neo-nihongo th {
+  border: none;
+}
