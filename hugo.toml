@@ -144,7 +144,6 @@ defaultContentLanguageInSubdir = false
 [params]
   description = "AI×Human Relationship Exploration"
   logo = "/images/logo-transparent.png"
-  favicon = "/images/favicon-accent.png"
 
 [markup]
   [markup.goldmark]
