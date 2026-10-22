@@ -22,7 +22,7 @@ switch_language: "Switch language"
 read_in: "Read this article in Japanese"
 
 # ─── Footer ───
-copyright: "© Callum & Sally"
+copyright: "© Callum & Sally<br>written by a human and an AI, together"
 powered_by: "Powered by Hugo"
 
 # ─── 404 ───

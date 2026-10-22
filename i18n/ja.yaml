@@ -22,7 +22,7 @@ switch_language: "言語を切り替え"
 read_in: "この記事を英語で読む"
 
 # ─── フッター ───
-copyright: "© Callum & Sally"
+copyright: "© Callum & Sally<br>written by a human and an AI, together"
 powered_by: "Powered by Hugo"
 
 # ─── 404 ───

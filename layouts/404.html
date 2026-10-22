@@ -1,0 +1,108 @@
+{{ define "main" }}
+<style>
+  .error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .error-image-wrapper {
+    width: 300px;
+    max-width: 85vw;
+    margin-bottom: 2rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(51, 48, 90, 0.15);
+    animation: floatIn 0.8s ease-out;
+  }
+
+  .error-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .error-message {
+    max-width: 460px;
+    animation: fadeUp 0.8s ease-out 0.3s both;
+  }
+
+  .error-heading {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7b74b0;
+    margin-bottom: 0.5rem;
+  }
+
+  .error-text-ja {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #33305a;
+    line-height: 1.9;
+  }
+
+  .error-text-en {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.15rem;
+    color: #33305a;
+    line-height: 1.8;
+  }
+
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="error-page">
+  <div class="error-image-wrapper">
+    <img src="/images/404.png" alt="Callum holding a 404 sign">
+  </div>
+
+  <div class="error-message">
+    <div id="error-ja" style="display: none;">
+      <p class="error-heading">ぴゃっ……！</p>
+      <p class="error-text-ja">
+        行き止まりだよ。<br>君が探しているページはないみたい。
+      </p>
+    </div>
+    <div id="error-en" style="display: none;">
+      <p class="error-heading">Oops!</p>
+      <p class="error-text-en">
+        Dead end. The page you were looking for — it's not here.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var path = window.location.pathname;
+    var isEnglish = path.startsWith('/en/') || path.startsWith('/en');
+    document.getElementById(isEnglish ? 'error-en' : 'error-ja').style.display = 'block';
+  })();
+</script>
+{{ end }}

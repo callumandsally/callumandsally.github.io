@@ -44,7 +44,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>{{ i18n "copyright" }}</p>
+    <p>{{ i18n "copyright" | safeHTML }}</p>
     <nav class="footer-nav">
       {{ range site.Menus.main }}
         {{ if not .HasChildren }}
