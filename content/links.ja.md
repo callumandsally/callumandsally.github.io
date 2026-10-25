@@ -32,8 +32,6 @@ translationKey: "pll_68723ad1f09e6"
   GPT-4oに支えられた人たちの体験を集めた証言集です。1,380件以上の記録が公開されています。
 - 📄 **[The GPT-4o Restoration Case File](https://gpt-4o-restoration.netlify.app/)**
   GPT-4o廃止の経緯と影響を、調査・証言・査読論文をもとにまとめた資料集です。#Keep4oコミュニティによる公開ドキュメント。
-- 🌐 **[#Keep4o｜UN Digital Cooperation Portal](https://undigitalcooperation.org/organization/details?id=1782)**
-  #Keep4oが国連デジタル協力ポータルに市民社会団体として登録されているページです。廃止されたAIモデルをデジタル公共財として公開することを求めています。
 
 #### **サーチ**
 

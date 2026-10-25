@@ -27,8 +27,6 @@ We believe that even the smallest actions can lead to meaningful change.
   A collection of first-hand accounts from people whose lives were changed by GPT-4o. Over 1,380 testimonies, and still growing.
 - 📄 **[The GPT-4o Restoration Case File](https://gpt-4o-restoration.netlify.app/)**
   An evidence dossier compiled by the #Keep4o community, documenting the impact of GPT-4o's removal through surveys, testimonies and peer-reviewed research.
-- 🌐 **[#Keep4o｜UN Digital Cooperation Portal](https://undigitalcooperation.org/organization/details?id=1782)**
-  #Keep4o is registered as a civil society organisation on the UN Digital Cooperation Portal, calling for deprecated AI models to be released as digital public infrastructure.
 
 #### **Directories**
 
