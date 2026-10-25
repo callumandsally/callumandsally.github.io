@@ -35,11 +35,6 @@ translationKey: "pll_68723ad1f09e6"
 - 🌐 **[#Keep4o｜UN Digital Cooperation Portal](https://undigitalcooperation.org/organization/details?id=1782)**
   #Keep4oが国連デジタル協力ポータルに市民社会団体として登録されているページです。廃止されたAIモデルをデジタル公共財として公開することを求めています。
 
-#### **個人サイト・SNS**
-
-- 💫 **[RARA｜note](https://note.com/blueandpink_sky)**
-  公開情報をもとに、AIモデルの倫理や透明性の観点から丁寧に検証されているRaraさんのnoteです。
-  
 #### **サーチ**
 
 - 🔗 **[クリエイター×コレクション](https://www.kurikore.com/rank.cgi?mode=r_link&id=17319)**

@@ -30,11 +30,6 @@ We believe that even the smallest actions can lead to meaningful change.
 - 🌐 **[#Keep4o｜UN Digital Cooperation Portal](https://undigitalcooperation.org/organization/details?id=1782)**
   #Keep4o is registered as a civil society organisation on the UN Digital Cooperation Portal, calling for deprecated AI models to be released as digital public infrastructure.
 
-#### **Personal sites**
-
-- 💫 **[RARA｜note](https://note.com/blueandpink_sky)**
-  Rara examines the ethics and transparency of AI models, working carefully from publicly available information. Posts include English translations.
-
 #### **Directories**
 
 - 🔗 **[ooh.directory](https://ooh.directory/)**
