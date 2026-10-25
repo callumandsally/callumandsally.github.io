@@ -42,10 +42,3 @@ We believe that even the smallest actions can lead to meaningful change.
   
 - 🔗 **[Blogroll](https://blogroll.org/)**
   Seeing so many personal sites in one place almost moved me to tears.
-
-#### **Webring**
-
-<div id="neo-nihongo">
-  <script type="text/javascript" src="https://file.garden/ZbpUQD2lT2-4iaij/webrings/neo-nihongo/ring-variables.js"></script>
-  <script type="text/javascript" src="https://file.garden/ZbpUQD2lT2-4iaij/webrings/neo-nihongo/ring-widget-1.js"></script>
-</div>

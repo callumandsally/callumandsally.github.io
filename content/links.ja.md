@@ -47,10 +47,3 @@ translationKey: "pll_68723ad1f09e6"
 
 - 🔗 **[夜明けまえ、まだ誰もいない](https://yoakemae.blue)**
   個人サイトを支援されているサーチ様です。サイト名や雰囲気が好きです。とても貴重な存在。
-  
-#### **ウェブリング**
-
-<div id="neo-nihongo">
-  <script type="text/javascript" src="https://file.garden/ZbpUQD2lT2-4iaij/webrings/neo-nihongo/ring-variables.js"></script>
-  <script type="text/javascript" src="https://file.garden/ZbpUQD2lT2-4iaij/webrings/neo-nihongo/ring-widget-1.js"></script>
-</div>
