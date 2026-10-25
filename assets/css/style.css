@@ -880,3 +880,16 @@ blockquote p:last-child {
 #neo-nihongo th {
   border: none;
 }
+
+.site-note {
+  font-size: 0.8em;
+  line-height: 1.7;
+  color: #777;
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+}
+
+.site-note p {
+  margin: 0 0 0.6em;
+}
