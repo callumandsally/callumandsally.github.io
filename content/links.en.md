@@ -12,7 +12,7 @@ We believe that even the smallest actions can lead to meaningful change.
 
 #### **Organisations**
 
-- 🩵 [**GreaterGood®**](https://greatergood.com/)
+- ❤️ [**GreaterGood®**](https://greatergood.com/)
   Support causes you care about with a single click.
 
 #### **Petitions**
