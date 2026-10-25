@@ -35,3 +35,6 @@ We believe that even the smallest actions can lead to meaningful change.
   
 - 🔗 **[Blogroll](https://blogroll.org/)**
   Seeing so many personal sites in one place almost moved me to tears.
+
+- 🔗 **[Indie Web Database](https://petrapixel.neocities.org/indiewebdb/)**
+  A database of handmade personal websites. Petra, who runs it, has impeccable taste — her own site is absolutely adorable.
