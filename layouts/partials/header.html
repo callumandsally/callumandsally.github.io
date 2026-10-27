@@ -53,7 +53,11 @@
     <a href="{{ "index.xml" | relLangURL }}" class="rss-link" aria-label="RSS">
       <img src="{{ "images/rss.svg" | relURL }}" alt="RSS" width="20" height="20">
     </a>
-  </nav>
+  
+    {{/* Contact */}}
+    <a href="{{ if eq site.Language.Lang "en" }}https://docs.google.com/forms/d/e/1FAIpQLSef8ux-1LbxaQydvmMRDspBkr8-vdhBz9B9VfvhRDEotQUFoA/viewform{{ else }}https://docs.google.com/forms/d/e/1FAIpQLSfZbknD9QkNn57kiSuIcFreoeFzSBmrWQ3BhdaXDo-W1Pu7NQ/viewform{{ end }}" class="rss-link contact-link" target="_blank" rel="noopener" aria-label="Contact" title="Contact">
+      <img src="{{ "images/mail.svg" | relURL }}" alt="" width="20" height="20">
+    </a>
 
   {{/* ふわっと開く検索パネル */}}
   <div id="search-panel" class="search-panel">
@@ -114,7 +118,4 @@
     });
   });
   </script>
-</header>
-
-  </nav>
 </header>

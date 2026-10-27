@@ -893,3 +893,9 @@ blockquote p:last-child {
 .site-note p {
   margin: 0 0 0.6em;
 }
+
+/* アイコン類は少し詰めて並べる */
+.search-toggle,
+.rss-link {
+  margin-left: -0.6rem;
+}
