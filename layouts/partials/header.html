@@ -45,12 +45,12 @@
     {{ partial "language-switcher.html" . }}
 	
     {{/* 検索 */}}
-    <button type="button" class="search-toggle" aria-label="{{ i18n "search" }}" aria-expanded="false" aria-controls="search-panel">
+    <button type="button" class="search-toggle" aria-label="{{ i18n "search" }}" title="Search" aria-expanded="false" aria-controls="search-panel">
       <img src="{{ "images/search.svg" | relURL }}" alt="" width="20" height="20">
     </button>
 
     {{/* RSS */}}
-    <a href="{{ "index.xml" | relLangURL }}" class="rss-link" aria-label="RSS">
+    <a href="{{ "index.xml" | relLangURL }}" class="rss-link" aria-label="RSS" title="RSS">
       <img src="{{ "images/rss.svg" | relURL }}" alt="RSS" width="20" height="20">
     </a>
   
