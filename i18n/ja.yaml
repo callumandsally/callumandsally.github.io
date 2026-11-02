@@ -28,3 +28,6 @@ powered_by: "Powered by Hugo"
 # ─── 404 ───
 page_not_found: "ページが見つかりません"
 back_to_home: "ホームに戻る"
+
+# ─── 目次 ───
+toc: "もくじ"

@@ -899,3 +899,16 @@ blockquote p:last-child {
 .rss-link {
   margin-left: -0.6rem;
 }
+
+.toc summary img.toc-icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0 0.3em 0 0;
+  vertical-align: -0.2em;
+}
+
+.toc summary { list-style: none; cursor: pointer; }
+.toc summary::-webkit-details-marker { display: none; }
+
+.post-content h2 { font-variant-numeric: lining-nums; }
