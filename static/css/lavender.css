@@ -1,0 +1,62 @@
+/* ===== ラベンダーの花びら ===== */
+
+/* ロゴの大きさにぴったり沿う入れ物 */
+.logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+.logo-wrap .site-logo,
+.logo-wrap .site-logo img {
+  display: block;
+}
+
+/* 左の花穂の上に重ねる透明なボタン（ここだけ押すと花が舞う） */
+.lavender-hotspot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22%;   /* ロゴ幅に対するラベンダー部分の幅 */
+  height: 80%;  /* ロゴ高さに対するラベンダー部分の高さ */
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer; /* 完全に秘密にしたいときは default に */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 範囲の調整用：下の行のコメントを外すと押せる範囲が赤い点線で見える */
+/* .lavender-hotspot { outline: 2px dashed red; } */
+
+/* 花びらを描くレイヤー */
+.lavender-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* 花びら一枚（ラベンダーの小花っぽい細長い粒） */
+.lavender-petal {
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+  opacity: 0;
+  animation: lavender-fall var(--dur) ease-in var(--delay) forwards;
+}
+
+@keyframes lavender-fall {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translate(calc(var(--dx) * 0.5 + var(--sway)), calc(var(--dy) * 0.45)) rotate(calc(var(--rot) * 0.5)); }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; }
+}
+
+/* 動きを減らす設定の人には、ゆっくり消えるだけにする */
+@media (prefers-reduced-motion: reduce) {
+  .lavender-petal { animation: lavender-fade 1.2s ease-out forwards; }
+  @keyframes lavender-fade {
+    0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(20px); }
+  }
+}

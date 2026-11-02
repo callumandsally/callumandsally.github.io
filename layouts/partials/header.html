@@ -5,13 +5,20 @@
 <header class="site-header">
   {{/* ロゴ — 中央配置 */}}
   <div class="header-logo">
-    <a href="{{ site.Home.RelPermalink }}" class="site-logo" aria-label="{{ i18n "home" }}">
+    <div class="logo-wrap">
+      <a href="{{ site.Home.RelPermalink }}" class="site-logo" aria-label="{{ i18n "home" }}">
+        {{ with site.Params.logo }}
+          <img src="{{ . }}" alt="{{ site.Title }}" />
+        {{ else }}
+          <span class="site-title">{{ site.Title }}</span>
+        {{ end }}
+      </a>
+      {{/* ラベンダーの花穂だけに重ねる隠しボタン（ロゴ画像があるときだけ） */}}
       {{ with site.Params.logo }}
-        <img src="{{ . }}" alt="{{ site.Title }}" />
-      {{ else }}
-        <span class="site-title">{{ site.Title }}</span>
+        <button type="button" class="lavender-hotspot" tabindex="-1" aria-hidden="true"
+                data-sound="{{ "sounds/rustle.mp3" | relURL }}"></button>
       {{ end }}
-    </a>
+    </div>
   </div>
 
   {{/* ナビゲーション */}}
@@ -119,4 +126,8 @@
     });
   });
   </script>
+
+  {{/* ラベンダーの花びら */}}
+  <link rel="stylesheet" href="{{ "css/lavender.css" | relURL }}">
+  <script src="{{ "js/lavender.js" | relURL }}" defer></script>
 </header>
