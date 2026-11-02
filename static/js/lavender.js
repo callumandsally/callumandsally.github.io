@@ -65,9 +65,20 @@
     }
   }
 
+  const wrap = btn.closest('.logo-wrap');
+
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     playSound();
     scatter();
+
+    // 連打しても毎回最初から揺れるようにする
+    wrap.classList.remove('is-swaying');
+    void wrap.offsetWidth;
+    wrap.classList.add('is-swaying');
+  });
+
+  wrap.addEventListener('animationend', (e) => {
+    if (e.animationName === 'lavender-sway') wrap.classList.remove('is-swaying');
   });
 })();

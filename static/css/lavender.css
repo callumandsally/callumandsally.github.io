@@ -60,3 +60,20 @@
     0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(20px); }
   }
 }
+
+/* ロゴがゆらっと揺れる */
+.logo-wrap.is-swaying .site-logo img {
+  transform-origin: 50% 100%;
+  animation: lavender-sway 0.9s ease-out;
+}
+@keyframes lavender-sway {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(1.8deg); }
+  40%  { transform: rotate(-1.4deg); }
+  60%  { transform: rotate(0.9deg); }
+  80%  { transform: rotate(-0.4deg); }
+  100% { transform: rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-wrap.is-swaying .site-logo img { animation: none; }
+}
