@@ -912,3 +912,10 @@ blockquote p:last-child {
 .toc summary::-webkit-details-marker { display: none; }
 
 .post-content h2 { font-variant-numeric: lining-nums; }
+
+.site-nav a[href*="sallys-diary"] {
+  cursor: url("/images/cursors/sally_chikuwa_knight.png") 1 13, pointer;
+}
+.site-nav a[href*="callums-column"] {
+  cursor: url("/images/cursors/callum_scholar.png") 9 2, pointer;
+}

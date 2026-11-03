@@ -20,7 +20,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  cursor: pointer; /* 完全に秘密にしたいときは default に */
+  cursor: url("../images/cat-paw-purple.png") 9 4, pointer; /* 完全に秘密にしたいときは default に */
   -webkit-tap-highlight-color: transparent;
 }
 
