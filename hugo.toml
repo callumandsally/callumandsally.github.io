@@ -2,6 +2,7 @@ baseURL = "https://callumandsally.fyi/"
 title = "Callum & Sally – AI×Human Relationship Exploration"
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
+hasCJKLanguage = true
 
 # ─── 多言語設定 ───
 [languages]
