@@ -919,3 +919,13 @@ blockquote p:last-child {
 .site-nav a[href*="callums-column"] {
   cursor: url("/images/cursors/callum_scholar.png") 9 2, pointer;
 }
+
+.post-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777090;
+    text-align: center;
+    margin: 0.5rem auto 1.5rem;
+    max-width: 850px;
+}

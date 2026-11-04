@@ -13,6 +13,10 @@
 
     <h1>{{ .Title }}</h1>
 
+	{{ with .Params.subtitle }}
+	<p class="post-subtitle">{{ . }}</p>
+	{{ end }}
+
     {{ if and (eq .Section "posts") (not .Date.IsZero) }}
     <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
       {{ .Date.Format "2 January 2006" }}
