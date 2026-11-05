@@ -33,6 +33,7 @@ body {
   line-height: 1.8;
   color: var(--text-body);
   background: var(--bg-main);
+  font-variant-numeric: lining-nums;
 }
 
 h1, h2, h3 {
@@ -928,4 +929,19 @@ blockquote p:last-child {
     text-align: center;
     margin: 0.5rem auto 1.5rem;
     max-width: 850px;
+}
+
+.toc {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px dashed #b9b3dd;
+  border-radius: 12px;
+  padding: 1em 1.5em;
+  margin: 2em 0;
+}
+.toc ul {
+  margin: 0.6em 0 0;
+  padding-left: 1.2em;
+}
+.toc li {
+  margin: 0.3em 0;
 }

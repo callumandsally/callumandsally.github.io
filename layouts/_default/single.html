@@ -44,12 +44,14 @@
 
   {{/* 本文 */}}
   <div class="post-content">
-  {{ if and (gt .WordCount 400) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
-<details class="toc" open>
-  <summary><img src="/images/toc.svg" alt="" class="toc-icon">{{ i18n "toc" }}</summary>
-  {{ .TableOfContents }}
-</details>
-{{ end }}
+　{{ $showToc := in .Params.categories "dialogues" }}
+　{{ if isset .Params "toc" }}{{ $showToc = .Params.toc }}{{ end }}
+　{{ if and $showToc (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+　<details class="toc" open>
+	<summary><img src="/images/toc.svg" alt="" class="toc-icon">{{ i18n "toc" }}</summary>
+  　{{ .TableOfContents }}
+　</details>
+　{{ end }}
     {{ .Content }}
   </div>
 
