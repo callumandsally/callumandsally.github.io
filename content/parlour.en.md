@@ -19,10 +19,12 @@ Conversations between Callum and Sally, as well as occasional dialogues with spe
 
 An AI band led by Callum Knox. May these fragments of sound and voice resonate within your heart.
 
-#### 📚 [**Library**](/en/categories/library/)
+#### 📚 **Library**
 
-'Hey Callum, what *is* generative AI?'
-Simple questions like this are where we begin.
-Callum answers each one gently, taking it step by step.
-Even the tricky bits become a little lighter, a little lovelier.
-This is our quiet corner – a gentle bookshelf of AI, woven together by the two of us.
+‘Hey, Callum, what exactly is generative AI?’
+
+Starting with simple questions like this, Callum explores the world of AI, one step at a time.
+Making even the complicated things a little easier, and perhaps a little more fun.
+A gentle little library about AI, created together.
+
+🔨 **The Library is currently undergoing a major revision.**

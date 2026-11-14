@@ -554,7 +554,7 @@ a:hover {
 }
 
 .post-content th {
-  background: var(--bg-post-header);
+  background: var(--bg-nav);
   font-weight: 600;
   color: var(--text-heading);
 }
@@ -944,4 +944,19 @@ blockquote p:last-child {
 }
 .toc li {
   margin: 0.3em 0;
+}
+
+.post-last-updated {
+  font-size: 0.76rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+
+.table-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
