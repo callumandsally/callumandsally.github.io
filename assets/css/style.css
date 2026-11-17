@@ -1015,7 +1015,7 @@ blockquote p:last-child {
     border-radius: 6px;
     background: transparent;
     color: var(--text-heading);
-    font: 600 0.95rem 'Lato', 'BIZ UDPGothic', sans-serif;
+    font: 400 1.06rem 'Playfair Display', serif;
     cursor: pointer;
   }
 
