@@ -1137,3 +1137,10 @@ blockquote p:last-child {
   .site-nav .rss-link img { top: 0; }
 }
 
+
+/* スマホではメニュー名の横の小さな▼を隠す */
+@media (max-width: 768px) {
+  .site-nav .nav-dropdown-toggle .nav-arrow {
+    display: none;
+  }
+}
