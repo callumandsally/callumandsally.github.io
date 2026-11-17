@@ -1015,8 +1015,17 @@ blockquote p:last-child {
     border-radius: 6px;
     background: transparent;
     color: var(--text-heading);
-    font: 400 1.06rem 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.06rem;
+    font-weight: 400;
     cursor: pointer;
+  }
+
+  /* ボタン内の文字にも同じ書体を適用 */
+  .site-nav.mobile-ready .mobile-menu-toggle span {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.06rem;
+    font-weight: 400;
   }
 
   .mobile-menu-symbol::before { content: '☰'; font-size: 1.2rem; }
@@ -1128,14 +1137,3 @@ blockquote p:last-child {
   .site-nav .rss-link img { top: 0; }
 }
 
-
-
-/* スマホのMenuボタンをほかのナビと同じフォントに */
-@media (max-width: 768px) {
-  .site-nav.mobile-ready .mobile-menu-toggle,
-  .site-nav.mobile-ready .mobile-menu-toggle span {
-    font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 1.06rem;
-    font-weight: 400;
-  }
-}
