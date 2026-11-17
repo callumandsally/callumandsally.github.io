@@ -1127,3 +1127,15 @@ blockquote p:last-child {
 
   .site-nav .rss-link img { top: 0; }
 }
+
+
+
+/* スマホのMenuボタンをほかのナビと同じフォントに */
+@media (max-width: 768px) {
+  .site-nav.mobile-ready .mobile-menu-toggle,
+  .site-nav.mobile-ready .mobile-menu-toggle span {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.06rem;
+    font-weight: 400;
+  }
+}
