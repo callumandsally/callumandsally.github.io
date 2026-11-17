@@ -22,9 +22,14 @@
   </div>
 
   {{/* ナビゲーション */}}
-  <nav class="site-nav" aria-label="{{ i18n "menu" }}">
+  <nav class="site-nav" id="primary-navigation" aria-label="{{ i18n "menu" }}">
+    {{/* スマホでだけ表示する開閉ボタン。言語切り替えはメニュー外に常時表示 */}}
+    <button type="button" class="mobile-menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="mobile-menu-symbol" aria-hidden="true"></span>
+      <span>{{ if eq site.Language.Lang "ja" }}メニュー{{ else }}Menu{{ end }}</span>
+    </button>
     {{ $currentPage := . }}
-    {{ range site.Menus.main }}
+    {{ range $menuIndex, $menuItem := site.Menus.main }}
       {{ if .HasChildren }}
         {{/* ドロップダウン付きメニュー */}}
         <div class="nav-dropdown">
@@ -33,7 +38,11 @@
              {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>
             {{ .Name }} <span class="nav-arrow">▾</span>
           </a>
-          <div class="nav-dropdown-menu">
+          {{/* 親リンクはそのまま残し、スマホだけサブメニューを開く別ボタンを用意 */}}
+          <button type="button" class="mobile-subnav-toggle"
+                  aria-controls="nav-submenu-{{ $menuIndex }}" aria-expanded="false"
+                  aria-label="{{ .Name }} {{ if eq site.Language.Lang "ja" }}の下位メニューを開閉{{ else }}submenu{{ end }}">▾</button>
+          <div class="nav-dropdown-menu" id="nav-submenu-{{ $menuIndex }}">
             {{ range .Children }}
               <a href="{{ .URL }}">{{ .Name }}</a>
             {{ end }}
@@ -121,8 +130,57 @@
       panel.classList.contains('is-open') ? closePanel() : openPanel();
     });
 
+    // モバイルメニューとサブメニュー。PCのhoverメニューはそのまま。
+    const nav = document.getElementById('primary-navigation');
+    const menuButton = nav?.querySelector('.mobile-menu-toggle');
+
+    function closeMobileMenu() {
+      if (!nav || !menuButton) return;
+      nav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      nav.querySelectorAll('.nav-dropdown.is-expanded').forEach(dropdown => {
+        dropdown.classList.remove('is-expanded');
+        dropdown.querySelector('.mobile-subnav-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    if (nav && menuButton) {
+      // JSを使えない環境ではナビ項目を隠さない。
+      nav.classList.add('mobile-ready');
+      menuButton.addEventListener('click', () => {
+        const opening = !nav.classList.contains('is-open');
+        if (opening) {
+          nav.classList.add('is-open');
+          menuButton.setAttribute('aria-expanded', 'true');
+        } else {
+          closeMobileMenu();
+          closePanel();
+        }
+      });
+
+      nav.querySelectorAll('.mobile-subnav-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const dropdown = toggle.closest('.nav-dropdown');
+          const opening = !dropdown.classList.contains('is-expanded');
+          dropdown.classList.toggle('is-expanded', opening);
+          toggle.setAttribute('aria-expanded', String(opening));
+        });
+      });
+
+      // スマホからPCへ画面幅が変わった際に状態をリセット。
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMobileMenu();
+      });
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closePanel();
+      if (e.key === 'Escape') {
+        closePanel();
+        if (nav?.classList.contains('is-open')) {
+          closeMobileMenu();
+          menuButton?.focus();
+        }
+      }
     });
   });
   </script>

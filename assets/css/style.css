@@ -960,3 +960,170 @@ blockquote p:last-child {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
+
+/* ============================================
+   MOBILE NAVIGATION — 768px以下のみ折りたたみ
+   元のPC用ナビ、ロゴ、検索、ラベンダー演出は変更しない
+   ============================================ */
+.mobile-menu-toggle,
+.mobile-subnav-toggle {
+  display: none;
+}
+
+.site-nav button:focus-visible,
+.site-nav a:focus-visible {
+  outline: 2px solid var(--text-heading);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .site-nav {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    padding: 0.35rem 1rem;
+    text-align: left;
+  }
+
+  /* 左端に言語切り替え、右端にMenuボタン */
+  .site-nav > .language-switcher {
+    order: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .site-nav .lang-switch-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.4rem;
+  }
+
+  .site-nav.mobile-ready .mobile-menu-toggle {
+    display: inline-flex;
+    order: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 44px;
+    min-width: 100px;
+    padding: 0 0.85rem;
+    border: 1px solid #c6bfdb;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-heading);
+    font: 600 0.95rem 'Lato', 'BIZ UDPGothic', sans-serif;
+    cursor: pointer;
+  }
+
+  .mobile-menu-symbol::before { content: '☰'; font-size: 1.2rem; }
+  .site-nav.is-open .mobile-menu-symbol::before { content: '×'; font-size: 1.6rem; }
+
+  /* JSで準備できたときだけ、ナビ項目を初期状態で隠す */
+  .site-nav.mobile-ready > .nav-dropdown,
+  .site-nav.mobile-ready > a:not(.language-switcher),
+  .site-nav.mobile-ready > .search-toggle {
+    display: none;
+  }
+
+  /* 展開したら、項目を1行ずつ縦に並べる */
+  .site-nav.mobile-ready.is-open > .nav-dropdown,
+  .site-nav.mobile-ready.is-open > a:not(.rss-link):not(.language-switcher) {
+    display: block;
+    flex: 0 0 100%;
+    order: 2;
+    min-width: 0;
+    margin: 0;
+    border-top: 1px solid #c9c2dc;
+    font-size: 1rem;
+  }
+
+  .site-nav.mobile-ready.is-open > a:not(.rss-link):not(.language-switcher) {
+    padding: 0.8rem 0.45rem;
+    min-height: 44px;
+  }
+
+  .site-nav.mobile-ready.is-open > .nav-dropdown {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+  }
+
+  .site-nav .nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.65rem 0.45rem;
+    text-align: left;
+  }
+
+  /* 親ページへ移動するリンクは残し、矢印ボタンでサブメニューを開閉 */
+  .site-nav.mobile-ready .mobile-subnav-toggle {
+    display: none;
+  }
+  .site-nav.mobile-ready.is-open .mobile-subnav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: var(--text-heading);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .site-nav .nav-dropdown.is-expanded .mobile-subnav-toggle {
+    transform: rotate(180deg);
+  }
+
+  .site-nav .nav-dropdown .nav-dropdown-menu,
+  .site-nav .nav-dropdown:hover .nav-dropdown-menu {
+    display: none;
+    position: static;
+    grid-column: 1 / -1;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0.2rem 0 0.45rem 0.6rem;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .site-nav .nav-dropdown.is-expanded .nav-dropdown-menu {
+    display: block;
+  }
+
+  .site-nav .nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.55rem 0.65rem;
+    white-space: normal;
+  }
+
+  /* アイコンは絵柄20pxのまま、タップ領域を44px四方に */
+  .site-nav.mobile-ready.is-open > .search-toggle,
+  .site-nav.mobile-ready.is-open > .rss-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    order: 3;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .site-nav.mobile-ready.is-open > .search-toggle { margin-left: auto; }
+  .site-nav.mobile-ready.is-open > .contact-link { margin-right: auto; }
+
+  .site-nav .rss-link img { top: 0; }
+}
