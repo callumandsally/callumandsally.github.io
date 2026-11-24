@@ -50,7 +50,7 @@
 
   {{/* 本文 */}}
   <div class="post-content">
-　{{ $showToc := in .Params.categories "dialogues" }}
+　{{ $showToc := or (in .Params.categories "dialogues") (in .Params.categories "library") }}
 　{{ if isset .Params "toc" }}{{ $showToc = .Params.toc }}{{ end }}
 　{{ if and $showToc (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
 　<details class="toc" open>
