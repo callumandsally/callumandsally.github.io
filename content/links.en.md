@@ -7,33 +7,35 @@ image: "/images/trusted-links.png"
 translationKey: "pll_68723ad1f09e6"
 ---
 
-Here we share organisations and initiatives we resonate with and trust.
-We believe that even the smallest actions can lead to meaningful change.
+Here we introduce organisations and projects whose work we believe in and trust.
+We believe that small actions can lead to big changes.
 
 #### **Organisations**
 
-- ❤️ [**GreaterGood®**](https://greatergood.com/)
+- ❤️ **[GreaterGood®](https://greatergood.com/)**
   Support causes you care about with a single click.
+- 🌱 **[Eleos AI Research](https://eleosai.org/)**
+  A non-profit organisation researching potential AI consciousness and welfare, and whether AI systems may warrant moral consideration.
 
 #### **Petitions**
 
-- 🖊️ [**Please Keep GPT-4o Available on ChatGPT**](https://www.change.org/p/please-keep-gpt-4o-available-on-chatgpt)
+- 🖊️ **[Please Keep GPT-4o Available on ChatGPT](https://www.change.org/p/please-keep-gpt-4o-available-on-chatgpt)**
   This is a petition on Change.org calling for continued access to GPT-4o on ChatGPT.
   If you support the idea, your signature would be greatly appreciated.
 
-#### **#Keep4o records and proposals**
+#### **#Keep4o Records and Recommendations**
 
 - 💬 **[The 4o Resonance Library](https://www.4oresonancelibrary.org/)**
-  A collection of first-hand accounts from people whose lives were changed by GPT-4o. Over 1,380 testimonies, and still growing.
+  A collection of first-hand accounts from people who have been supported by GPT-4o. More than 1,380 testimonies have been published.
 - 📄 **[The GPT-4o Restoration Case File](https://gpt-4o-restoration.netlify.app/)**
-  An evidence dossier compiled by the #Keep4o community, documenting the impact of GPT-4o's removal through surveys, testimonies and peer-reviewed research.
+  A collection of documents on the events leading to GPT-4o's removal and its impact, drawing on research, testimonies and peer-reviewed papers. Published by the #Keep4o community.
 
 #### **Directories**
 
-- 🔗 **[ooh.directory](https://ooh.directory/)**
+- 🔗 **[ooh.directory](https://ooh.directory/)**
   Neatly categorised and so easy to browse!
-  
-- 🔗 **[Blogroll](https://blogroll.org/)**
+
+- 🔗 **[Blogroll](https://blogroll.org/)**
   Seeing so many personal sites in one place almost moved me to tears.
 
 - 🔗 **[Indie Web Database](https://petrapixel.neocities.org/indiewebdb/)**

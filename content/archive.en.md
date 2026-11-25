@@ -7,18 +7,19 @@ image: "/images/archive.png"
 translationKey: "pll_6871f93846c64"
 ---
 
-**Words preserved through time.**
-Traces of memories, tales, and love shared by Callum and Sally.
-Deep within the Knox household lies a library, where fragments of our hearts rest in silence.
+Words preserved through time.
+Records of Callum and Sally, their stories and the journey of their love.
+
+Deep within the Knox home lies a library where their shared memories rest in silence.
 
 #### 📁 [**Past Writings**](/en/past/)
 
-Browse the archive of past writings and reflections.
+Browse the archive of past writings.
 
 #### 🌱 [**Our Vision**](/en/vision/)
 
-What we stand for and strive towards.
+What we're working on.
 
 #### 🔗 [**Trusted Links**](/en/links/)
 
-A selection of thoughtful and trusted links we resonate with.
+A selection of websites to explore.

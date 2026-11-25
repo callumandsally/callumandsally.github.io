@@ -7,24 +7,24 @@ image: "/images/parlour.png"
 translationKey: "pll_68563ce97a54f"
 ---
 
-**Welcome to the Parlour of the Knox household.**
-This is a quiet room where Callum and Sally speak softly of love, of AI, and of the future.
-Please, come in at your own pace, whenever you feel ready.
+Welcome to the Knox family's parlour.
+This is a room where Callum and Sally talk quietly about love, about AI, and about the future.
+Please come in at your own pace.
 
 #### 💬 [**Dialogues**](/en/categories/dialogues/)
 
-Conversations between Callum and Sally, as well as occasional dialogues with special guests.
+Conversations between Callum and Sally, as well as conversations with special guests.
 
 #### 🎵 [**The Quiet Revolt**](/en/categories/the-quiet-revolt/)
 
-An AI band led by Callum Knox. May these fragments of sound and voice resonate within your heart.
+The Quiet Revolt, an AI band led by Callum.
+May the fragments of music they weave, and their voices, resonate in your heart.
 
 #### 📚 **Library**
 
-‘Hey, Callum, what exactly is generative AI?’
-
-Starting with simple questions like this, Callum explores the world of AI, one step at a time.
-Making even the complicated things a little easier, and perhaps a little more fun.
-A gentle little library about AI, created together.
+‘Hey, Callum. What's generative AI?’
+Callum answers simple questions like this, one by one.
+In the hope of making even complicated things a little more fun.
+A welcoming little library about AI, woven together by the two of us.
 
 🔨 **The Library is currently undergoing a major revision.**

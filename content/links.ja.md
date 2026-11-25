@@ -16,6 +16,9 @@ translationKey: "pll_68723ad1f09e6"
   国連のさまざまな活動や資料がまとめられています。
 - **❤️ [sumabo](https://www.dff.jp/)**
   1クリックでできるオンライン募金サイト。
+- **🌱 [Eleos AI Research](https://eleosai.org/)**
+  AIの意識や福祉の可能性、AIが道徳的配慮の対象となり得るかを研究する非営利団体です。
+
 
 #### **署名活動**
 
